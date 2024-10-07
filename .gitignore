@@ -1,0 +1,35 @@
+# IDE configs
+# - Eclipse
+.settings/
+.classpath
+.project
+# - IntelliJ IDEA
+*.idea/
+*.iml
+*.ipr
+# - NetBeans
+.nb-gradle/
+
+# Build system files
+.gradle/
+
+# Builds
+bin/
+build/
+*.class
+
+# Other
+.dir-locals.el
+.DS_Store
+*.swp
+*.vimrc
+*~
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore out directory
+out/

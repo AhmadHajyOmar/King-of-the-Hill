@@ -1,0 +1,24 @@
+image: openjdk:16-jdk-slim
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+build:
+  stage: build
+  script:
+    - ./gradlew jar
+  artifacts:
+    paths:
+      - out/ants.jar
+
+test:
+  allow_failure: true
+  stage: test
+  script:
+    - ./gradlew test
+  artifacts:
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
